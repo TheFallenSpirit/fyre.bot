@@ -1,29 +1,12 @@
 // @ts-check
-let testimonials = [
-    {
-        message: "Fyre is a great bot. Really fun to use, lots of features, and tons of quality of life improvements for you and your server. I highly recommend this gorgeous bot.",
-        author: {
-            name: "Fallen",
-            avatarUrl: "https://cdn.discordapp.com/avatars/738746238874419220/a_b8d713e5a47e2026fe3b3d4cc30215e5.gif",
-            position: "Server Administrator"
-        },
-        guild: {
-            name: "Fyre Hub",
-            iconUrl: "https://cdn.discordapp.com/icons/1370922624397606952/d256f11d947495281740da772f62b8fa.webp"
-        }
-    }
-];
-
 let index = 0;
 let intervalId = 0;
 
-async function fetchTestimonials() {
-    const response = await fetch(`https://api.fyre.bot/testimonials`).catch(() => {});
-    if (!response?.ok) return;
-
-    const responseBody = await response.json();
-    if (responseBody.data.length > 0) testimonials = responseBody.data;
-};
+let testimonials = [{
+    message: '',
+    guild: { name: '', iconUrl: '' },
+    author: { name: '', position: '', avatarUrl: '' }
+}];
 
 function renderTestimonial(index = 0) {
     const testimonial = testimonials[index];
@@ -50,8 +33,23 @@ function renderTestimonial(index = 0) {
     if (authorNameElement) authorNameElement.textContent = testimonial.author.name;
 };
 
+setTimeout(async () => {
+    document.getElementById('prev-testimonial')?.addEventListener('click', () => {
+        prevTestimonial();
+        resetAutoSlide();
+    });
+
+    document.getElementById('next-testimonial')?.addEventListener('click', () => {
+        nextTestimonial();
+        resetAutoSlide();
+    });
+
+    await fetchTestimonials();
+    startAutoSlide();
+}, 250);
+
 function startAutoSlide() {
-    intervalId = setInterval(nextTestimonial, 15_000);
+    if (testimonials.length > 0) intervalId = setInterval(nextTestimonial, 15_000);
 };
 
 function resetAutoSlide() {
@@ -69,19 +67,10 @@ function nextTestimonial() {
     renderTestimonial(index);
 };
 
-setTimeout(async () => {
-    document.getElementById('prev-testimonial')?.addEventListener('click', () => {
-        prevTestimonial();
-        resetAutoSlide();
-    });
+async function fetchTestimonials() {
+    const response = await fetch(`https://api.fyre.bot/testimonials`).catch(() => {});
+    if (!response?.ok) return;
 
-    document.getElementById('next-testimonial')?.addEventListener('click', () => {
-        nextTestimonial();
-        resetAutoSlide();
-    });
-
-    await fetchTestimonials();
-    renderTestimonial(0);
-}, 250);
-
-startAutoSlide();
+    const responseBody = await response.json();
+    if (responseBody.data.length > 0) testimonials = responseBody.data;
+};
