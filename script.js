@@ -22,8 +22,7 @@ async function fetchTestimonials() {
     if (!response?.ok) return;
 
     const responseBody = await response.json();
-    testimonials = responseBody.data;
-    console.log(responseBody);
+    if (responseBody.data.length > 0) testimonials = responseBody.data;
 };
 
 function renderTestimonial(index = 0) {
