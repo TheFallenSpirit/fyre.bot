@@ -11,10 +11,16 @@ code {
     color: rgba(103, 232, 249, 0.85) !important;
 }
 
+.background {
+    animation: gradient 20s ease infinite;
+    background: linear-gradient(-45deg, #000f20, #000000);
+    background-size: 400% 400%;
+}
+
 .gradient-bg {
+    animation: gradient 15s ease infinite;
     background: linear-gradient(45deg, var(--brand-color), #0e7490);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
 }
 
 .secondary-bg {
