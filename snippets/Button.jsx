@@ -10,7 +10,7 @@ export const Button = ({ icon, href, label, className }) => {
     if (className) buttonClasses += ` ${className}`;
 
     return (
-        <a href={href} target="_blank">
+        <a href={href}>
             <button className={buttonClasses}>
                 {icon && <Icon icon={icon} className="mr-2"/>}
                 <span>{label}</span>
