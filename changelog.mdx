@@ -3,6 +3,47 @@ title: 'Changelog'
 description: "Keep up-to-date with Fyre's latest changes and updates."
 ---
 
+<Update label="Mar 2026" description="Feb 1st (2026) - Mar 9th (2026)">
+### New Landing Page
+We have a brand new landing page now live at https://fyre.bot.
+All of Fyre's documentation is now available at https://fyre.bot/docs instead of the previous domain.
+Requests to https://docs.fyre.bot will be automatically redirected to our new site.
+
+### Greatly Improved Docs
+Following the new landing page, hundreds of small changes have been made to the docs.
+Featuring a new font, improved colors, and a uniform layout for most modules' docs pages. 
+
+Additionally, many icons have been changed, and icons have been added to headers on some doc pages.
+Finally, we added a new "Changelog" page (at the top of the sidebar)
+where these changelog announcements will also be posted.
+
+### Other changes in this update
+- You can now change question types when updating form and ticket category questions.
+- The `close-on-leave` ticket category option is now **enabled by default**,
+and was moved from `/categories update advanced` to `/categories update general`.
+- Jail and ticket DM messages have been overhauled with a slimmer, more modern design.
+- Multiple bugs with the VIP module's reactions have been fixed.
+- A bug with avatar rendering on the `/whois` panel has been fixed.
+- The forms module got **a lot** of love with major overhauls to the user experience
+(including new radio and checkbox components for select type questions).
+- Response validations for form submissions were fixed, preventing certain edge cases from failing.
+- Added `>rcreate`, `>rupdate`, and `>rdelete` aliases for their slash command counterparts.
+- Improved GIF detection logic for channel media mode.
+
+### Other changes in this update, part 2
+- Added "user" question type for ticket category questions,
+resolving to a user and automatically sending the whois panel in the opened ticket.
+- Added an upsell for getting a trial license when attempting to use Fyre in an unlicensed server.
+- Updated text command option validation to have much better error messages.
+- Removed `/lock` and `/unlock` channel commands due to high error rates.
+- Added `/lock` command to lock existing jails.
+- Added in-place jailing for existing tickets.
+Fyre will automatically convert existing tickets into jails if a member is jailed inside that ticket.
+- Removed lots of old debug code slowing things down.
+- Added common misspell aliases to VIP commands.
+- Added new "VIP Guide" to docs with help button on VIP panel.
+</Update>
+
 <Update label="Jan 2026" description="Nov 1st (2025) - Jan 27th (2026)">
 ### VIP Module Introduction
 Also known as boost roles on other bots, Fyre's VIP module allows a server to create up to 5 VIP tiers.
