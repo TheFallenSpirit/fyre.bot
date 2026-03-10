@@ -1,0 +1,91 @@
+---
+icon: 'lock-keyhole-open'
+title: 'Permissions'
+description: "Learn about Fyre's advanced permissions system and how to customize permissions in your server."
+---
+
+By default, members require Discord permissions to use restricted or protected commands on Fyre.
+With Fyre's advanced permissions system, you can give users the ability to use commands without needing Discord permissions.
+
+## Managing Permissions
+To add or remove permissions from a user or role, use the `/permissions` (`/permissions @user-or-role [permission-string]`) command.
+This command supports a "permissions string" similar to a [role string](../utilities#role-commands).
+
+A permission string is a comma separated list of [advanced permissions](#advanced-permissions),
+prefixed with a `+` to add the permission, or a `-` to remove the permission.
+
+You can also use the command without a permission string to view the user or role's current permissions.
+
+
+## Advanced Permissions
+Below is a list of permissions and what they are for.
+You can give these permissions to roles so they can use Fyre's features without needing native Discord permissions.
+
+The "default" permissions are the native Discord permissions a member must have by default to use a command.
+
+<Tabs>
+    <Tab title="Utility">
+        - `utility.role` - Use the `/role` command to add/remove roles to/from members in a server (default: Manage Roles).
+        - `utility.nsfw` - Use the `/nsfw` command to quickly toggle a channel's age-restricted status (default: Manage Channels).
+        - `utility.ticket-panel` - Use the `/ticket-panel` command to create ticket panels in a server.
+        - `utility.restore` - Use the `/restore` command to restore a member's roles and nickname in a server (default: Manage Roles & Manage Nicknames).
+
+        - `utility.roles` - Use the `/roles info` command and view all roles in a server (default: Manage Roles).
+        - `utility.roles.*` - Use all `/roles` commands and manage all roles in a server (default: Administrator).
+        - `utility.roles.bulk` - Use the `/roles bulk` command and bulk add/remove roles to/from members (default: Administrator).
+        - `utility.roles.color` - Use the `/roles color` command and update a role's colours and style (default: Manage Roles).
+        - `utility.roles.manage` - Use all `/roles` commands except `/roles bulk` and manage all roles in a server (default: Manage Roles).
+
+        - `utility.channels.bulk` - Use the `/channels bulk-create` and `/channels bulk-delete`
+        commands to bulk create or delete channels (default: Administrator).
+        - `utility.steal` - Use the `/steal` command and add emojis to a server (default: Create Expressions).
+        - `utility.rename` - Use the `/rename` command and rename channels in a server (default: Manage Channels).
+        - `utility.activity` - Use the `/activity` commands and compile activity reports in a server (default: Administrator).
+
+        - `utility.unafk` - Use the `>unafk` command and remove a member's AFK status in a server (default: Moderate Members).
+        - `utility.setafk` - Use the `>setafk` command a set a member's AFK status in a server (default: Moderate Members).
+    </Tab>
+    <Tab title="Moderation">
+        - `moderation.jail` - Use the `/jail` and `/unjail` commands to jail or unjail members in a server (default: Kick Members).
+        - `moderation.history` - Use the `/history` commands and view users' moderation history (default: Moderate Members).
+    </Tab>
+    <Tab title="Module Config">
+        - `templates.*` - Use all `/templates` commands, and create and manage all message templates in a server (default: Manage Guild).
+        - `templates.create` - Use the `/templates create` command and create message templates in a server (default: Manage Guild).
+        - `templates.manage` - Use all `/templates` commands except `/templates create` and manage all message templates in a server (default: Manage Guild).
+
+        - `responses` - Use the `/responses view` command and view all auto responses in a server (default: Manage Messages).
+        - `responses.*` - Use all `/responses` commands, and create and manage all auto responses in a server (default: Manage Messages & Moderate Members).
+        - `responses.create` - Use the `/responses create` command and create new auto responses in a server (default: Manage Messages & Moderate Members).
+        - `responses.manage` - Use all `/responses` commands except `/responses create`
+        and manage all auto responses in a server (default: Manage Messages & Moderate Members).
+
+        - `categories` - Use `/categories view` and view all ticket categories in a server (default: Manage Channels).
+        - `categories.*` - Use all `/categories` commands, and create and manage all ticket categories in a server (default: Manage Channels & Manage Guild).
+        - `categories.create` - Use `/categories create` and create ticket categories in a server (default: Manage Channels).
+
+        - `categories.manage` - Use all `/categories` commands except `/categories`
+        and manage all ticket categories in a server (default: Manage Channels & Manage Guild).
+
+        - `channels.manage` - Use all `/channels` commands except for `/channels bulk` commands and manage auto purging,
+        auto threading, and media only mode in channels (default: Manage Channels).
+
+        - `vip.*` - Use all `/vip-admin` commands and manage the VIP module in a server (default: Manage Server).
+        - `vip.config` - Use the `/vip-admin config` command and configure the VIP module in a server (default: Manage Server).
+        - `vip.profiles` - Use the `/vip-admin profiles` commands and manage VIP profiles in a server (default: Manage Server).
+        - `vip.tiers.create` - Use the `/vip-admin tiers create` command create new VIP tiers in a server (default: Manage Server).
+        - `vip.tiers.manage` - Use the `/vip-admin tiers` commands and manage VIP tiers in a server (default: Manage Server).
+    </Tab>
+    <Tab title="Configuration">
+        - `config` - Use `/config view` and view a server's configuration default: (Manage Guild).
+        - `config.*` - Use all `/config` commands and manage all server config options.
+        - `config.general` - Use `/config general` and change general settings like a server's prefix and default embed colour.
+        - `config.jail` - Use `/config jail` and change a server's jail settings and jail roles.
+        - `config.snipe` - Use `/config snipe` and change a server's snipe settings.
+        - `config.whitelisted-bots` - Use `/config whitelisted-bots` commands and manage a server's whitelisted bots.
+        - `config.member-backup` - Use `/config member-backup` commands and change a server's member backup settings.
+        - `config.afk` - Use the `/config afk` command and update a server's AFK module settings.
+        - `config.last-fm` - Use the `/config last-fm` command and update a server's Last.fm settings.
+        - `config.time-converter` - Use the `/config time-converter` command and update a server's time converter settings.
+    </Tab>
+</Tabs>

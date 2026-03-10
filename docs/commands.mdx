@@ -1,0 +1,53 @@
+---
+icon: 'zap'
+title: 'Commands'
+description: "View a list of Fyre's utility commands that don't belong to a module."
+---
+
+<Tip>
+All of these commands work as slash commands and text commands.
+Available aliases are shown next to the command name.
+</Tip>
+
+## Info Commands
+A list of commands that provide information about Fyre, a user, or a server.
+
+- `/ping` - View Fyre's current ping, and the current server's shard (if in a server).
+- `/server` - View information about the current server, including it's owner, statistics, and more.
+- `/whois` - View information about a specific user, including their roles and more in the current server.
+  - `/whois @user`
+
+
+## Role Commands
+A list of commands for giving roles to members and managing roles in your server.
+
+A role string is a comma separated list of role names, mentions, or IDs.
+By default, Fyre will toggle the specified roles for the target member.
+
+To override this behaviour, you can prefix roles with `+` to only add them, or `-` to only remove them.
+
+You can also prefix the role string with `++` to only add all roles, or `--` to only remove all roles.
+
+- `/role` `>r` - Add or remove roles to/from a user in bulk.
+  - `/role @user <role-string>` 
+- `/roles icon` `>ricon` - Change a role's icon with an emoji or attached image.
+  - `/roles icon @role [icon-file] [icon-emoji]`
+- `/roles move` `>rmove` - Move a role above or below another role on the hierarchy.
+  - `/roles move @role top/above/below/bottom`
+- `/roles bulk` - Add or remove a role from all servers members, or members with/without another role.
+  - `/roles bulk +/- @role [with-role] [without-role] [exclude-bots]`
+- `/roles color` `>rcolor` - Change a role's color(s) with hex codes.
+  - `/roles color @role [primary-color] [secondary-color] [--holographic]`
+- `/roles create` `>rcreate` - Create a new role in the server.
+  - `/roles create <name> [hoisted] [mentionable]`
+- `/roles update` `>rupdate` - Update an existing role in the server.
+  - `/roles update @role [name] [hoisted] [mentionable]`
+- `/roles delete` `>rdelete` - Delete an existing role in the server.
+  - `/roles delete @role`
+
+## Other Commands
+A list of other utility commands that don't fit into an above category.
+
+- `/color` - View a solid image of a color using a hex code.
+  - `/color <hex>`
+

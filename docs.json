@@ -2,13 +2,16 @@
 	"$schema": "https://mintlify.com/docs.json",
 	"theme": "mint",
 	"name": "Fyre Bot",
-	"favicon": "/favicon.png",
+	"favicon": "/public/favicon.png",
 	"icons": {
 		"library": "lucide"
 	},
+	"fonts": {
+		"family": "Jetbrains Mono"
+	},
 	"logo": {
-		"dark": "/icon.png",
-		"light": "/icon.png"
+		"dark": "/public/icon.png",
+		"light": "/public/icon.png"
 	},
 	"appearance": {
 		"strict": true,
@@ -32,13 +35,33 @@
 			"description": "This page doesn't exist yet, or it doesn't exist anymore. [Tap/click here](/) to go back."
 		}
 	},
+	"footer": {
+		"socials": {
+			"discord": "https://discord.gg/SNxqD4ujTF",
+			"github": "https://github.com/FyreCorp"
+		}
+	},
+	"navbar": {
+		"primary": {
+			"type": "button",
+			"label": "Add App",
+			"href": "https://discord.com/oauth2/authorize?client_id=1350451983022166158"
+		},
+		"links": [
+			{
+				"type": "button",
+				"label": "Docs",
+				"href": "/docs/syntax"
+			}
+		]
+	},
 	"navigation": {
 		"global": {
 			"anchors": [
 				{
-					"icon": "plus",
-					"anchor": "Add App",
-					"href": "https://discord.com/oauth2/authorize?client_id=1350451983022166158"
+					"icon": "square-pen",
+					"anchor": "Changelog",
+					"href": "/changelog"
 				},
 				{
 					"icon": "discord",
@@ -52,41 +75,43 @@
 				"icon": "rocket",
 				"group": "The Basics",
 				"pages": [
-					"basics/syntax",
-					"basics/utilities",
-					"basics/permissions"
+					"docs/syntax",
+					"docs/commands",
+					"docs/permissions"
 				]
 			},
 			{
-				"icon": "user-round-check",
-				"group": "User Guides",
+				"icon": "scroll",
+				"group": "Resources",
 				"pages": [
-					"users/vip"
+					"docs/guides/vip",
+					"docs/guides/config",
+					"docs/guides/buying",
+					"docs/guides/automation"
 				]
 			},
 			{
 				"icon": "settings",
 				"group": "Modules",
 				"pages": [
-					"modules/vip",
-					"modules/jail",
-					"modules/afk",
-					"modules/snipe",
-					"modules/forms",
-					"modules/last-fm",
-					"modules/activity",
-					"modules/join-gate",
-					"modules/auto-purge",
-					"modules/auto-thread",
-					"modules/time",
-					"modules/auto-responder",
-					"modules/member-backup",
-					"modules/media",
-					"modules/auto-react",
+					"docs/modules/vip",
+					"docs/modules/afk",
+					"docs/modules/jail",
+					"docs/modules/snipe",
+					"docs/modules/forms",
+					"docs/modules/last-fm",
+					"docs/modules/activity",
+					"docs/modules/join-gate",
+					"docs/modules/media",
+					"docs/modules/purge",
+					"docs/modules/responses",
+					"docs/modules/threads",
+					"docs/modules/time",
+					"docs/modules/backup",
 					{
 						"icon": "tickets",
 						"group": "Tickets",
-						"pages": ["modules/tickets/general", "modules/tickets/managing"]
+						"pages": ["docs/modules/tickets/general", "docs/modules/tickets/managing"]
 					}
 				]
 			},
@@ -94,34 +119,21 @@
 				"icon": "message-circle-code",
 				"group": "Templating",
 				"pages": [
-					"templating/syntax",
-					"templating/variables",
-					"templating/message-templates",
-					"templating/defaults"
-				]
-			},
-			{
-				"icon": "zap",
-				"group": "Miscellaneous",
-				"pages": [
-					"misc/automation"
+					"docs/templating/syntax",
+					"docs/templating/variables",
+					"docs/templating/message-templates",
+					"docs/templating/defaults"
 				]
 			},
 			{
 				"icon": "gavel",
 				"group": "Legal",
 				"pages": [
-					"legal/terms",
-					"legal/privacy",
-					"legal/orders"
+					"terms",
+					"privacy",
+					"orders"
 				]
 			}
 		]
-	},
-	"footer": {
-		"socials": {
-			"github": "https://github.com/FyreCorp",
-			"discord": "https://discord.gg/SNxqD4ujTF"
-		}
 	}
 }

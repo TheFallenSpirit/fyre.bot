@@ -1,0 +1,105 @@
+:root {
+    --brand-color: #1fa9e1;
+    --rgb-brand-color: 31, 169, 225;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+code {
+    color: rgba(103, 232, 249, 0.85) !important;
+}
+
+.background {
+    animation: gradient 20s ease infinite;
+    background: linear-gradient(-45deg, #000f20, #000000);
+    background-size: 400% 400%;
+}
+
+.gradient-bg {
+    animation: gradient 15s ease infinite;
+    background: linear-gradient(45deg, var(--brand-color), #0e7490);
+    background-size: 400% 400%;
+}
+
+.secondary-bg {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.icon-button {
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(var(--rgb-brand-color), 0.3);
+}
+
+.feature-card, .testimonial-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(var(--rgb-brand-color), 0.15);
+    border-color: rgba(var(--rgb-brand-color), 0.3);
+}
+
+.shine-effect {
+    overflow: hidden;
+    position: relative;
+}
+
+.shine-effect::before {
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    transform: skewX(-15deg);
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
+}
+
+/* .shine-effect::before {
+    top: 0;
+    width: 150%;
+    height: 150%;
+    content: "";
+    position: absolute;
+    transform: translateX(-100%);
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
+} */
+
+.shine-effect:hover::before {
+    animation: shine 1875ms ease-in-out;
+}
+
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+    100% {
+        left: 125%;
+    }
+}
+
+/* @keyframes shine {
+    100% {
+        transform: translateX(100%);
+    }
+} */
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

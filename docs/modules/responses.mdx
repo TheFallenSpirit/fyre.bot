@@ -1,0 +1,56 @@
+---
+icon: 'message-circle-reply'
+title: 'Auto Responder'
+keywords: ['responder', 'responses', 'auto react', 'auto reactions']
+description: "Learn about Fyre's auto responder module and how to manage auto responses in your server."
+---
+
+## How it Works
+When setup, Fyre will automatically respond to specifc trigger words with reactions or a custom message.
+
+You can also configure per-channel auto-reactions, where Fyre will auto-react to every message in a channel.
+
+
+## Global Auto Responses
+Auto responses that work in any channel in your server.
+
+### Creating
+To create an auto response, use `/responses create`.
+This command supports the following options:
+
+- `type` - The type of auto response to create (reply, message, or reaction).
+- `name` - A unique name for the auto response (only for identifying the auto response).
+- `triggers` - A comma separated list of triggers for the auto response (max 3).`
+- `content` - The text content of the auto response, if the type is reply or message. If not, a comma separated list of emojis (max 5).
+- `required-roles` - A comma separated list of required roles to trigger this auto response.
+
+#### Auto Response Types
+There are 3 types of auto responses, here's the gist if it.
+
+- `reply` - A normal text-based message reply to the triggering message.
+- `message` - A normal text-based message sent in the channel of the triggering message.
+- `reaction` - An auto reaction of up to 5 emojis to the triggering message.
+
+### Updating
+To update an auto response, use `/responses update <response>`.
+This command supports all the same options as the create command.
+
+### Deleting
+To delete an auto response, use `/responses delete <response>`.
+
+<Warning>
+Once you delete an auto response, it can't be recovered. Use this command with caution.
+</Warning>
+
+
+## Per-channel Auto Responses
+Per-channel auto responses make Fyre auto-react to every message in a channel.
+
+To configure per-channel auto-reactions, use `/channels auto-react #channel`.
+This command supports the following options:
+
+- `enabled` - If auto-reactions are enabled in the target channel (default: No).
+- `reactions` - A comma separated list of auto reactions for the target channel (default: None, max: 5, null to reset).
+- `include-bots` - If messages sent from bots in the target channel should be auto-reacted to (default: No).
+- `affect-children` - If messages sent in child channels (threads) should be auto-reacted to (default: No).
+- `ignored-users` - A comma separated list of users to ignore when auto-reacting.

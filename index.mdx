@@ -1,0 +1,185 @@
+---
+mode: 'custom'
+title: 'Landing'
+---
+
+import { Header } from './snippets/Header.jsx';
+import { Button } from './snippets/Button.jsx';
+import { FeatureCard } from './snippets/FeatureCard.jsx';
+
+<div className="background text-white overflow-y-auto">
+    <section id="hero" className="flex flex-col min-h-screen relative overflow-hidden">
+        <div className="relative mt-32 mx-auto max-w-8xl px-4 lg:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8 text-center lg:text-left mt-16 lg:mt-0">
+                    <h1 className="text-4xl md:text-6xl font-bold text-gray-100 leading-tight">
+                        Give your server the <span className="text-[var(--brand-color)]">upgrade</span> it deserves
+                    </h1>
+                    <p className="text-lg md:text-xl text-gray-300">
+                        Purchase Fyre today to experience the best app that Discord has to offer.
+                        With tickets, forms, jailing, auto responses, utility, administration, and more.
+                    </p>
+                    <div className="flex flex-row gap-4 justify-center lg:justify-start">
+                        <Button
+                            label="Buy Now"
+                            href="/docs/guides/buying"
+                            className="gradient-bg shine-effect"
+                        />
+                        <Button
+                            label="Docs"
+                            href="/docs/syntax"
+                            className="secondary-bg shine-effect"
+                        />
+                    </div>
+                </div>
+                <div className="relative">
+                    <div className="lg:hidden"/>
+                    <div className="lg:block hidden absolute inset-0 bg-[var(--brand-color)] rounded-full blur-3xl opacity-20"/>
+                    <img
+                        src="/public/icon.png"
+                        alt="Bot Icon"
+                        className="relative rounded-3xl w-full max-w-md mx-auto sm:max-w-full md:w-auto hidden lg:block"
+                    />
+                </div>
+            </div>
+        </div>
+        <a
+            href="#features"
+            className="hidden p-5 m-auto text-xl rounded-xl items-center justify-center shine-effect icon-button animate-bounce lg:flex"
+        >
+            <Icon icon="move-down" size={24}/>
+        </a>
+    </section>
+    <section id="features" className="mx-auto max-w-8xl px-4 lg:px-12">
+        <Header
+            title="Fyre's Features"
+            description="Everything Fyre has to offer to supercharge your server and make your life easier."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8">
+            <FeatureCard
+                icon="ticket"
+                title="Tickets"
+                redirect="/docs/modules/tickets"
+                description="Let your members contact staff easily with the tickets module. Make up to 15 categories with their own questions, messages, and permissions."
+            />
+            <FeatureCard
+                icon="scroll-text"
+                title="Forms"
+                redirect="/docs/modules/forms"
+                description="Create forms for your members to fill out, with up to 25 questions per form. Supporting text, single select, and multi select questions."
+            />
+            <FeatureCard
+                icon="gem"
+                title="VIP"
+                redirect="/docs/modules/vip"
+                description="Reward your boosters or patrons with a custom role and or auto reactions to their chosen name(s). Supporting up to 5 VIP tiers with different perks."
+            />
+            <FeatureCard
+                icon="siren"
+                title="Jail"
+                redirect="/docs/modules/jail"
+                description="Send your misbehaving members to jail with ease. You can connect the jail and tickets modules to automatically create tickets for jailed members."
+            />
+            <FeatureCard
+                icon="clock-7"
+                title="Time Converter"
+                redirect="/docs/modules/time"
+                description="Don't let time zones hold you back. With this module, Fyre will auto-respond to times in messages with a unix timestamp of that time."
+            />
+            <FeatureCard
+                icon="message-circle-reply"
+                title="Auto Responder"
+                redirect="/docs/module/responses"
+                description="Easily create auto responses and auto reactions to keywords in messages. Fyre can reply to the message, send a message in the channel, or auto react."
+            />
+            <FeatureCard
+                icon="volleyball"
+                title="Auto Threading"
+                redirect="/docs/module/threads"
+                description="Keep your channels organized effortlessly with auto-threading. Fyre will automatically create a thread for comments on posts in a text channel."
+            />
+            <FeatureCard
+                icon="trash-2"
+                title="Auto Purge"
+                redirect="/docs/module/purge"
+                description="Create purge channels where Fyre will automatically deleted messages after a certain delay. Supports filtering messages from bots."
+            />
+            <FeatureCard
+                icon="zap"
+                title="And more..."
+                redirect="/docs/commands"
+                description="View Fyre's full module and command lists to learn about all available features for users and servers alike."
+            />
+        </div>
+    </section>
+    <section id="testimonials" className="mt-40 mx-auto max-w-8xl px-4 lg:px-12">
+        <Header
+            title="What our users say"
+            description="Testimonials from server owners and admins using Fyre in their servers."
+        />
+        <div className="flex flex-col">
+            <div className="flex h-full min-h-56 flex-col p-8 gap-8 rounded-2xl justify-between testimonial-card shine-effect">
+                <span id="testimonial-message" className="text-lg">
+                    "Fyre is a great bot. Really fun to use, lots of features,
+                    and tons of quality of life improvements for you and your server.
+                    I highly recommend this gorgeous bot." (Placeholder)
+                </span>
+                <div className="flex flex-row justify-between">
+                    <div className="flex flex-row items-center">
+                        <img
+                            id="testimonial-author-avatar"
+                            src="https://cdn.discordapp.com/guilds/1446386358812803095/users/1350451983022166158/avatars/1a66c5f1cc3a9dca6e0cb52b142b36f8.webp"
+                            className="w-10 h-10 mr-4 rounded-full"
+                        />
+                        <div className="flex flex-col">
+                            <span id="testimonial-author-name" className="text-gray-200">Anonymous</span>
+                            <span id="testimonial-author-position" className="text-sm text-gray-400">Super Secret Server Spy (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div className="flex-row items-center hidden md:flex">
+                        <div className="flex flex-col items-end">
+                            <span id="testimonial-guild-name" className="text-gray-200">Fyre Hub</span>
+                            <span className="text-sm text-gray-400">A server using Fyre</span>
+                        </div>
+                        <img
+                            id="testimonial-guild-icon"
+                            src="https://cdn.discordapp.com/icons/1370922624397606952/d256f11d947495281740da772f62b8fa.webp"
+                            className="w-10 h-10 ml-4 rounded-full"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div className="flex flex-row mt-4 gap-4 justify-center">
+                <button id="prev-testimonial" className="p-2 icon-button rounded-2xl shine-effect">
+                    <Icon icon="chevron-left" size={32}/>
+                </button>
+                <span id="testimonial-index" className="px-4 flex icon-button rounded-2xl items-center">
+                    1/1
+                </span>
+                <button id="next-testimonial" className="p-2 icon-button rounded-2xl shine-effect">
+                    <Icon icon="chevron-right" size={32}/>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="footer" className="mt-4 mx-auto max-w-8xl px-4 lg:px-12">
+        <div className="flex py-4 border-t-2 border-white/20 items-center justify-center">
+            <span>
+                Copyright © 2026 Liam L &lt;
+                <a
+                    href="https://github.com/TheFallenSpirit"
+                    target="_blank"
+                    className="underline"
+                >
+                    TheFallenSpirit
+                </a>
+                &gt; &bull; Design by
+                <a
+                    href="https://github.com/RedolentHalo/discord-bot-website-template"
+                    target="_blank"
+                    className="underline"
+                > RedolentHalo</a>
+            </span>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,70 @@
+---
+title: 'Changelog'
+description: "Keep up-to-date with Fyre's latest changes and updates."
+---
+
+<Update label="Jan 2026" description="Nov 1st (2025) - Jan 27th (2026)">
+### VIP Module Introduction
+Also known as boost roles on other bots, Fyre's VIP module allows a server to create up to 5 VIP tiers.
+Each tier can come with a custom role, ping auto reactions, and keyword auto reactions.
+
+You can also allow members to share their VIP role with other members via a customizable member limit.
+
+To learn more, or how to get started, visit the [VIP Module Docs](/docs/modules/vip).
+
+### Activity Module Introduction
+Fyre now has an activity module, allowing server admins and owners to compile charts of staff activity in 3 categories:
+tickets claimed, message counts, and minutes in voice calls.
+
+You can compile a chart with up to 90 days of history.
+Tickets will always work via `/activity tickets`,
+but message counts and voice minutes need to be enabled via `/config activity`.
+
+Fyre will only record minutes in voice, and the count of members' messages with the relevant settings enabled.
+Message content and other information **isn't** recorded.
+
+Voice and message recording are opt-in by role, if no roles are whitelisted in `/config activity`, no activity will be recorded.
+
+### Jail Module Update
+Added the ability to create jails as locked (use the "locked" option).
+Locked jails will require a member with the same role or higher to unjail, or a member with the "Administrator" permission.
+
+### Other changes in this update
+- Added the ability to create private VCs linked to tickets (`/ticket-vc`, `>tvc`).
+By default only ticket staff can create VCs, this can be changed via `/categories update permissions`.
+- Added button selection to `/categories greeting` where you can choose which buttons
+appear under the ticket greeting embed (supporting the new "Create VC" button).
+- Improved display of ticket history in `/history tickets`.
+- Added `>unafk` and `>setafk` commands for admins to have fun with the AFK system.
+- Added required roles to auto responses, allowing admins to lock auto-responses behind certain roles.
+- Fixed various issues with command responses pinging roles or users unintentionally.
+- Added new `/channels config` command where you can update multiple channel modules at once (auto purge, auto threading, media, etc).
+- Added "allow-gifs" option to channel media mode (`/channels media`).
+- Added the ability to directly give users permissions via `/permissions`.
+- Improved ticket panel creation experience via `/ticket-panel`.
+</Update>
+
+<Update label="Oct 2025" description="Aug 7th (2025) - Oct 24th (2025)">
+Hello everyone, it's been a while since I posted any updates, even though I've been hard at work adding stuff to Fyre.
+Here's a list of new features and changes added to Fyre recently:
+
+- Added `timeZone` variable support to the Time Convert template.
+- Added an upsell to apply our recommended jail category config when setting your server's jail tickets category.
+- Fixed snipe pagination buttons not responding as expected.
+- Improved display of commands in the `/help` menus.
+- Added `Reason` field to jail ticket close log/transcript embeds.
+- Updated ticket transcript CSS (about 15 times).
+- Doubled the maximum template length for ticket category greeting messages.
+- Switched member caching to a delayed approach to allow for faster restarts and updates.
+- Added a new Join Gate module to auto kick accounts younger then a specified time period (`/config join-gate`).
+- Added per-channel auto-reactions to auto react to every message in a channel (`/channels auto-react`).
+- Added multiple choice question support in Forms.
+- Added `now` variable support to Auto Thread templates.
+- Added `affect-children` option to channel auto-reactions (will auto-react to messages in threads as well) (`/channels auto-react`).
+- Added new Force Nick module (`/force-nick set`, `/force-nick list`, `/force-nick clear`) with support for users and roles.
+- Added `/config branding` command to allow servers to change Fyre's in-server avatar, banner, and bio.
+- Added more media file types to channel media mode.
+- Added thread support to all channel modules.
+- Added `logs-channel` option to channel media mode, enabling logs for deleted media with deletion reasons.
+- Solved various other small bugs or performance issues (I'm out of text space).
+</Update>
