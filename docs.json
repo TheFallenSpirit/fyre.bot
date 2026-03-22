@@ -102,6 +102,7 @@
 					"docs/modules/last-fm",
 					"docs/modules/activity",
 					"docs/modules/join-gate",
+					"docs/modules/translate",
 					"docs/modules/transcribe",
 					"docs/modules/media",
 					"docs/modules/purge",
