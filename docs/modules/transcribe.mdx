@@ -4,10 +4,9 @@ title: 'Transcribe'
 description: "Learn how to use Fyre's voice message transcriber module."
 ---
 
-<Tip>
-This module is available to users (with a [user license](../guides/buying#user-licence-|-$8))
-and servers (with a [server license](../guides/buying#server-licence-|-$50)).
-</Tip>
+import DualLicense from '../../snippets/DualLicense.mdx';
+
+<DualLicense/>
 
 ## <Icon icon="terminal"/> Usage
 How to transcribe a message anywhere on Discord with Fyre Bot.
@@ -24,8 +23,8 @@ To transcribe a voice message on mobile, hold down on the message,
 select "Apps", then "Fyre", and finally, tap "Transcribe".
 
 ### <Icon icon="timer-reset"/> Cooldowns
-- Per-user - `30 seconds`
-- Per-server - `60 seconds`
+- Per-user - `15 seconds`
+- Per-server - `30 seconds`
 
 Only one cooldown will apply, depending on where the command is used.
 Per-server cooldown always takes priority over per-user.
