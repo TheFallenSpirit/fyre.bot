@@ -3,16 +3,17 @@ let index = 0;
 let intervalId = 0;
 
 const defaultMessage = [
-    `"Fyre is a great bot. Really fun to use, lots of features, `,
-    `and tons of quality of life improvements for you and your server. `,
-    `I highly recommend this gorgeous bot." (Placeholder)`
+    'Fyre is a great bot. Really fun to use, lots of features, ',
+    'and tons of quality of life improvements for you and your server. ',
+    'I highly recommend this gorgeous bot. (Placeholder)'
 ].join('')
 
 let testimonials = [{
     message: defaultMessage,
     guild: {
         name: 'Fyre Hub',
-        iconUrl: 'https://cdn.discordapp.com/icons/1370922624397606952/d256f11d947495281740da772f62b8fa.webp'
+        iconUrl: 'https://cdn.discordapp.com/icons/1370922624397606952/d256f11d947495281740da772f62b8fa.webp',
+        memberCount: 100
     },
     author: {
         name: 'Anonymous',
@@ -31,10 +32,12 @@ function renderTestimonial(index = 0) {
 
     const guildIcon = document.getElementById('testimonial-guild-icon');
     const guildName = document.getElementById('testimonial-guild-name');
+    const guildMemberCount = document.getElementById('testimonial-guild-member-count');
 
     // @ts-expect-error
     if (guildIcon) guildIcon.src = testimonial.guild.iconUrl;
     if (guildName) guildName.textContent = testimonial.guild.name;
+    if (guildMemberCount) guildMemberCount.textContent = `~${testimonial.guild.memberCount} members`;
 
     const authorNameElement = document.getElementById('testimonial-author-name');
     const authorAvatarElement = document.getElementById('testimonial-author-avatar');
