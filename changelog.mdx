@@ -3,6 +3,35 @@ title: 'Changelog'
 description: "Keep up-to-date with Fyre's latest changes and updates."
 ---
 
+<Update label="Apr 2026" description="Mar 10th (2026) - Apr 20th (2026)">
+**===== THIS UPDATE CONTAINS BREAKING CHANGES =====**
+
+# ⚡ Fyre Updates Changelog: March 10th - April 20th (2026)
+
+## Message Templates v2
+The message template system has been rebuilt from the ground up. Now, it follows Discord's components v2 system.
+
+Now, Fyre has a simple template builder, and far better support for mentions, emojis, gifs, and more.
+
+To start, all old templates are now accessible with the `/templates-old` commands.
+All old templates will need to be migrated using the `/templates convert` command.
+If you don't migrate your templates, they won't be rendered, and Fyre will fall back to the default ones.
+
+Going forward, Fyre will focus on implementing message templates everywhere possible.
+Starting with more command responses, and eventually message automations for joins, leaves, boosts, role changes, etc.
+
+### [Message Transcription](<https://fyre.bot/docs/modules/transcribe>)
+Fyre now supports transcribing messages in multiple languages. To transcribe a message, use the "Transcribe" context command on any message.
+
+### Other changes in this update
+- Added basic message translation ("Translate" context command, only supports translating into English).
+- Added example usage to certain command error messages.
+- Added the ability to view your VIP config by using `/vip-admin config` with no options.
+- The steal command got smarter, and now supports replying to others' messages to steal an emoji.
+- Switched to a different date/time library (shouldn't be noticeable, minor speed improvements to calculations).
+- Added a global error catch to all commands, so if Fyre encounters an unknown error, it'll let you know instead of failing to respond.
+</Update>
+
 <Update label="Mar 2026" description="Feb 1st (2026) - Mar 9th (2026)">
 ### New Landing Page
 We have a brand new landing page now live at https://fyre.bot.
